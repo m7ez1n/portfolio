@@ -4,7 +4,7 @@ import SocialMedia from "@/components/social-media";
 
 export default function Home() {
   return (
-    <main className="flex flex-col justify-between w-screen h-screen dark:bg-black p-14">
+    <main className="flex flex-col justify-between w-screen h-screen select-none dark:bg-black p-14">
       <div className="w-full md:flex md:items-center md:justify-between">
         <Image
           src="/assets/icon.png"
