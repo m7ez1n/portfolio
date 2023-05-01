@@ -40,7 +40,7 @@ export default function Home() {
             Web Developer
           </p>
           <p className="text-[#C0C0C0] text-xl leading-10">
-            From <span className="uppercase text-[#FF2B51]">in</span> @
+            <span className="text-[#FF2B51]">at</span> @
             <a
               target="_blank"
               className="underline"
