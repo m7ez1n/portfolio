@@ -15,7 +15,7 @@ export default function Home() {
         />
         <div className="flex flex-col gap-2">
           <h1 className="font-light text-4xl text-[#FF2B51] tracking-wider text-center md:text-right leading-10 uppercase">
-            Mateus``
+            Mateus
           </h1>
           <h1 className="font-semibold text-4xl text-[#FF2B51] tracking-wider text-center md:text-right leading-10 uppercase">
             Pinheiro
