@@ -5,3 +5,10 @@
 body {
   overflow: hidden;
 }
+
+@media (max-width: 768px) {
+  body {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
