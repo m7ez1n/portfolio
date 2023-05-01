@@ -1,18 +1,21 @@
-import Image from "next/image";
+import { useState } from "react";
 
+import Content from "@/components/contents";
 import SocialMedia from "@/components/social-media";
+import ToggleTheme from "@/components/toggle-theme";
+
+import type { ContentOptions } from "@/components/contents";
+import Sidebar from "@/components/sidebar";
 
 export default function Home() {
+  const [currentContent, setCurrentContent] =
+    useState<ContentOptions>("default");
+
   return (
     <main className="flex flex-col justify-between w-screen h-screen select-none dark:bg-black p-14">
       <div className="w-full md:flex md:items-center md:justify-between">
-        <Image
-          src="/assets/icon.png"
-          alt="Logo Mateus Mendes"
-          className="hidden md:block"
-          width={100}
-          height={150}
-        />
+        <ToggleTheme />
+        <Sidebar changeContent={setCurrentContent} />
         <div className="flex flex-col gap-2">
           <h1 className="font-light text-4xl text-[#FF2B51] tracking-wider text-center md:text-right leading-10 uppercase">
             Mateus
@@ -23,23 +26,14 @@ export default function Home() {
         </div>
       </div>
       <div className="flex justify-center">
-        <div className="flex flex-col gap-2 text-left w-96">
-          <p className="text-3xl font-semibold leading-10 text-[#FF2B51]">
-            Um pouco sobre mim...
-          </p>
-          <p className="text-xl font-normal leading-10 text-white">
-            Comecei minha jornada no mundo da programação quando tinha apenas 17
-            anos e fiquei completamente apaixonado por esse universo de resolver
-            problemas e criar soluções através de códigos.
-          </p>
-        </div>
+        <Content current={currentContent} />
       </div>
       <div className="flex flex-col items-center justify-between w-full gap-8 md:gap-0 md:flex-row">
         <div>
           <p className="text-2xl font-semibold leading-10 text-white">
             Web Developer
           </p>
-          <p className="text-[#C0C0C0] text-xl leading-10">
+          <p className="text-[#C0C0C0] text-xl leading-10 text-center md:text-left">
             <span className="text-[#FF2B51]">at</span> @
             <a
               target="_blank"
