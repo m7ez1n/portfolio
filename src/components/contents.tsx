@@ -7,7 +7,7 @@ type ContentProps = {
 };
 
 const AboutMe = () => (
-  <div className="flex flex-col gap-2 text-left w-96">
+  <div className="flex flex-col gap-2 text-center md:text-left w-96">
     <p className="text-3xl font-semibold leading-10 text-[#FF2B51]">
       Um pouco sobre mim...
     </p>
