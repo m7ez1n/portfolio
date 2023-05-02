@@ -12,13 +12,13 @@ export default function Home() {
     useState<ContentOptions>("default");
 
   return (
-    <main className="flex flex-col justify-between w-screen h-screen p-8 select-none dark:bg-black md:p-14">
+    <main className="flex flex-col justify-between min-h-screen p-8 select-none min-w-screen dark:bg-black md:p-14">
       <div className="w-full md:flex md:items-center md:justify-between">
         <div className="flex items-center justify-between gap-4 mb-12">
           <ToggleTheme />
           <Sidebar changeContent={setCurrentContent} />
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 mb-8 md:mb-0">
           <h1 className="font-light text-4xl text-[#FF2B51] tracking-wider text-center md:text-right leading-10 uppercase">
             Mateus
           </h1>
