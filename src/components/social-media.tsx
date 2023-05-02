@@ -33,7 +33,12 @@ const links: LinksProps[] = [
 const SocialMedia = () => (
   <div className="flex gap-4">
     {links.map(({ icon, link, name }) => (
-      <a key={`key-${name}`} href={link} target="_blank">
+      <a
+        key={`key-${name}`}
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         {icon}
       </a>
     ))}
