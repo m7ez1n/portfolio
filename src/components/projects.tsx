@@ -48,11 +48,15 @@ const CardProject = ({ name, description, url, techs }: CardProjectProps) => (
   >
     <div className="border-2 border-[#FF2B51] rounded-md p-4">
       <div className="flex items-center justify-between mb-3">
-        <p className="text-lg font-bold text-white">{name}</p>
-        <AiOutlineGithub size={28} className="text-white" />
+        <p className="text-lg font-bold dark:text-white text-black/70">
+          {name}
+        </p>
+        <AiOutlineGithub size={28} className="dark:text-white text-black/70" />
       </div>
 
-      <p className="mb-4 font-light text-white/80">{description}</p>
+      <p className="mb-4 font-light dark:text-white/80 text-black/70">
+        {description}
+      </p>
 
       <div className="flex flex-wrap w-full gap-2">
         {techs.map((tech) => (

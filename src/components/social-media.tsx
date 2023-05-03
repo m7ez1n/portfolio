@@ -19,7 +19,9 @@ const links: LinksProps[] = [
     name: "Github",
   },
   {
-    icon: <AiOutlineTwitter className="text-white" size={36} />,
+    icon: (
+      <AiOutlineTwitter className="text-black/70 dark:text-white" size={36} />
+    ),
     link: "https://twitter.com/m7ez1n",
     name: "Twitter",
   },

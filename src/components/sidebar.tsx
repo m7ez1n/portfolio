@@ -9,7 +9,7 @@ type SidebarProps = {
 };
 
 const textClassName =
-  "text-white text-2xl uppercase font-semibold leading-9 tracking-wider cursor-pointer";
+  "dark:text-white text-black/70 text-2xl uppercase font-semibold leading-9 tracking-wider cursor-pointer";
 const activeContent =
   "after:block after:w-14 after:h-[1px] after:bg-[#FF2B51] after:relative after:mt-1.5";
 

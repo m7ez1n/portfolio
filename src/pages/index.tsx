@@ -35,7 +35,7 @@ export default function Home() {
       </div>
       <div className="flex flex-col items-center justify-between w-full gap-8 md:gap-0 md:flex-row">
         <div>
-          <p className="text-2xl font-semibold leading-10 text-white">
+          <p className="text-2xl font-semibold leading-10 text-black/70 dark:text-white">
             Web Developer
           </p>
           <p className="text-[#C0C0C0] text-xl leading-10 text-center md:text-left">

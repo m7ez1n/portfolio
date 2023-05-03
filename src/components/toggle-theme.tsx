@@ -1,24 +1,25 @@
-import { useState } from "react";
+import { useTheme } from "next-themes";
 import { BsMoon, BsSun } from "react-icons/bs";
 
 const ToggleTheme = () => {
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const { theme, systemTheme, setTheme } = useTheme();
+  const currentTheme = theme === "system" ? systemTheme : theme;
 
-  if (theme === "dark") {
+  if (currentTheme === "light") {
     return (
-      <BsSun
-        className="text-white cursor-pointer"
+      <BsMoon
+        className="cursor-pointer text-black/70"
         size={36}
-        onClick={() => setTheme("light")}
+        onClick={() => setTheme("dark")}
       />
     );
   }
 
   return (
-    <BsMoon
+    <BsSun
       className="text-white cursor-pointer"
       size={36}
-      onClick={() => setTheme("dark")}
+      onClick={() => setTheme("light")}
     />
   );
 };
