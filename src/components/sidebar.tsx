@@ -27,7 +27,7 @@ const Sidebar = ({ changeContent, currentContent }: SidebarProps) => {
           className={clsx(textClassName, aboutIsCurrent ? activeContent : null)}
           onClick={changeToAboutMe}
         >
-          about
+          sobre mim
         </p>
         <p
           className={clsx(
@@ -36,7 +36,7 @@ const Sidebar = ({ changeContent, currentContent }: SidebarProps) => {
           )}
           onClick={changeToProjects}
         >
-          projects
+          projetos
         </p>
       </div>
     </div>
