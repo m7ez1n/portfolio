@@ -16,7 +16,10 @@ export default function Home() {
       <div className="w-full md:flex md:items-center md:justify-between">
         <div className="flex items-center justify-between gap-4 mb-12">
           <ToggleTheme />
-          <Sidebar changeContent={setCurrentContent} />
+          <Sidebar
+            changeContent={setCurrentContent}
+            currentContent={currentContent}
+          />
         </div>
         <div className="flex flex-col gap-2 mb-8 md:mb-0">
           <h1 className="font-light text-4xl text-[#FF2B51] tracking-wider text-center md:text-right leading-10 uppercase">
