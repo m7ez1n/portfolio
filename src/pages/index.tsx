@@ -30,7 +30,7 @@ export default function Home() {
           </h1>
         </div>
       </div>
-      <div className="flex justify-center">
+      <div className="flex md:justify-center">
         <Content current={currentContent} />
       </div>
       <div className="flex flex-col items-center justify-between w-full gap-8 md:gap-0 md:flex-row">

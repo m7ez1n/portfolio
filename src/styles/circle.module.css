@@ -12,8 +12,8 @@
 
 @media (max-width: 768px) {
   .circle{
-    width: 15rem;
-    height: 15rem;
+    width: 20rem;
+    height: 20rem;
     border: 10px solid #E40037;
   }
 }
