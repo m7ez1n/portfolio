@@ -1,0 +1,16 @@
+{
+  "navbar": {
+    "about": "about",
+    "projects": "projects"
+  },
+  "about": {
+    "title": "A little about myself...",
+    "description": "I started my journey into the world of programming when I was just 17 years old and I was completely in love with this universe of solving problems and creating solutions through codes."
+  },
+  "projects": {
+    "landing": "He4rt Developers community landing page design",
+    "conf": "Design for He4rtConf2021 event, authentication and tickets",
+    "recap": "Project to show how 2022 was for He4rt Developers",
+    "4noobs": "Project aimed at beginners to learn more about ReactJS"
+  }
+}
