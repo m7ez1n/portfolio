@@ -5,37 +5,53 @@ import TechTag from "@/components/tech-tag";
 
 type CardProjectProps = {
   name: string;
+  github: string;
   url: string;
   description: string;
   techs: string[];
 };
 
-const CardProject = ({ name, description, url, techs }: CardProjectProps) => (
-  <a
-    href={url}
-    className="max-w-lg cursor-pointer"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <div className="border-2 border-[#FF2B51] rounded-md p-4">
-      <div className="flex items-center justify-between mb-3">
-        <p className="text-lg font-bold dark:text-white text-black/70">
-          {name}
-        </p>
-        <AiOutlineGithub size={28} className="dark:text-white text-black/70" />
-      </div>
+const CardProject = ({
+  name,
+  description,
+  github,
+  url,
+  techs,
+}: CardProjectProps) => (
+  <div className="border-2 border-[#FF2B51] rounded-md p-4 max-w-lg">
+    <div className="flex items-center justify-between mb-3">
+      <a
+        href={url}
+        className="text-lg font-bold dark:text-white text-black/70 hover:text-[#FF2B51] hover:dark:text-[#FF2B51] transition duration-300"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {name}
+      </a>
 
-      <p className="mb-4 font-light dark:text-white/80 text-black/70">
-        {description}
-      </p>
-
-      <div className="flex flex-wrap w-full gap-2">
-        {techs.map((tech) => (
-          <TechTag key={tech}>{tech}</TechTag>
-        ))}
-      </div>
+      <a
+        href={github}
+        className="cursor-pointer"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <AiOutlineGithub
+          size={28}
+          className="dark:text-white text-black/70 hover:text-[#FF2B51] hover:dark:text-[#FF2B51] transition duration-300"
+        />
+      </a>
     </div>
-  </a>
+
+    <p className="mb-4 font-light dark:text-white/80 text-black/70">
+      {description}
+    </p>
+
+    <div className="flex flex-wrap w-full gap-2">
+      {techs.map((tech) => (
+        <TechTag key={tech}>{tech}</TechTag>
+      ))}
+    </div>
+  </div>
 );
 
 const Projects = () => {
@@ -44,19 +60,22 @@ const Projects = () => {
   const mockProjects: CardProjectProps[] = [
     {
       name: "He4rt Landing",
-      url: "https://github.com/he4rt/he4rt-landing-ssr",
+      github: "https://github.com/he4rt/he4rt-landing-ssr",
+      url: "https://heartdevs.com",
       description: t("projects.landing"),
       techs: ["remix", "reactjs", "tailwindcss", "typescript"],
     },
     {
       name: "He4rt Conf",
-      url: "https://github.com/he4rt/he4rtconf-landing",
+      github: "https://github.com/he4rt/he4rtconf-landing",
+      url: "https://conf.heartdevs.com",
       description: t("projects.conf"),
       techs: ["nextjs", "reactjs", "styled-components", "typescript"],
     },
     {
       name: "He4rt Recap 2022",
-      url: "https://github.com/kjkGustavo/he4rt-recap-2022",
+      github: "https://github.com/kjkGustavo/he4rt-recap-2022",
+      url: "https://2022.heartdevs.com",
       description: t("projects.recap"),
       techs: [
         "nextjs",
@@ -68,6 +87,7 @@ const Projects = () => {
     },
     {
       name: "React 4noobs",
+      github: "https://github.com/he4rt/react4noobs",
       url: "https://github.com/he4rt/react4noobs",
       description: t("projects.4noobs"),
       techs: ["reactjs", "markdown"],
