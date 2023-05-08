@@ -1,10 +1,12 @@
-import type { AppProps } from "next/app";
+import { appWithTranslation } from "next-i18next";
 import { DefaultSeo } from "next-seo";
 import { ThemeProvider } from "next-themes";
 
+import type { AppProps } from "next/app";
+
 import "@/styles/globals.css";
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class">
       <DefaultSeo
@@ -26,3 +28,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </ThemeProvider>
   );
 }
+
+export default appWithTranslation(App);

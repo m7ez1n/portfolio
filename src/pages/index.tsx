@@ -1,11 +1,13 @@
 import { useState } from "react";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import Content from "@/components/contents";
 import SocialMedia from "@/components/social-media";
 import ToggleTheme from "@/components/toggle-theme";
+import Sidebar from "@/components/sidebar";
 
 import type { ContentOptions } from "@/components/contents";
-import Sidebar from "@/components/sidebar";
+import { GetStaticProps } from "next";
 
 export default function Home() {
   const [currentContent, setCurrentContent] =
@@ -54,3 +56,11 @@ export default function Home() {
     </main>
   );
 }
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale || "pt-BR", ["common", "home"])),
+    },
+  };
+};

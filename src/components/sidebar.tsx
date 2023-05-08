@@ -1,7 +1,8 @@
-import type { Dispatch, SetStateAction } from "react";
 import clsx from "clsx";
+import { useTranslation } from "next-i18next";
 
 import type { ContentOptions } from "./contents";
+import type { Dispatch, SetStateAction } from "react";
 
 type SidebarProps = {
   changeContent: Dispatch<SetStateAction<ContentOptions>>;
@@ -14,6 +15,7 @@ const activeContent =
   "after:block after:w-14 after:h-[1px] after:bg-[#FF2B51] after:relative after:mt-1.5";
 
 const Sidebar = ({ changeContent, currentContent }: SidebarProps) => {
+  const { t } = useTranslation();
   const changeToAboutMe = () => changeContent("about");
   const changeToProjects = () => changeContent("projects");
 
@@ -27,7 +29,7 @@ const Sidebar = ({ changeContent, currentContent }: SidebarProps) => {
           className={clsx(textClassName, aboutIsCurrent ? activeContent : null)}
           onClick={changeToAboutMe}
         >
-          sobre
+          {t("navbar.about")}
         </p>
         <p
           className={clsx(
@@ -36,7 +38,7 @@ const Sidebar = ({ changeContent, currentContent }: SidebarProps) => {
           )}
           onClick={changeToProjects}
         >
-          projetos
+          {t("navbar.projects")}
         </p>
       </div>
     </div>

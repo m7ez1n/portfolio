@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { AiOutlineGithub } from "react-icons/ai";
 
 import TechTag from "@/components/tech-tag";
@@ -8,36 +9,6 @@ type CardProjectProps = {
   description: string;
   techs: string[];
 };
-
-const mockProjects: CardProjectProps[] = [
-  {
-    name: "He4rt Landing",
-    url: "https://github.com/he4rt/he4rt-landing-ssr",
-    description: "Projeto da landing page da comunidade He4rt Developers",
-    techs: ["remix", "reactjs", "tailwindcss", "typescript"],
-  },
-  {
-    name: "He4rt Conf",
-    url: "https://github.com/he4rt/he4rtconf-landing",
-    description:
-      "Projeto para o evento He4rtConf2021, autenticação e ingressos",
-    techs: ["nextjs", "reactjs", "styled-components", "typescript"],
-  },
-  {
-    name: "He4rt Recap 2022",
-    url: "https://github.com/kjkGustavo/he4rt-recap-2022",
-    description:
-      "Projeto para mostrar como foi o ano de 2022 da He4rt Developers",
-    techs: ["nextjs", "reactjs", "tailwindcss", "typescript", "framer-motion"],
-  },
-  {
-    name: "React 4noobs",
-    url: "https://github.com/he4rt/react4noobs",
-    description:
-      "Projeto voltado aos iniciantes para aprender mais sobre ReactJS",
-    techs: ["reactjs", "markdown"],
-  },
-];
 
 const CardProject = ({ name, description, url, techs }: CardProjectProps) => (
   <a
@@ -67,12 +38,49 @@ const CardProject = ({ name, description, url, techs }: CardProjectProps) => (
   </a>
 );
 
-const Projects = () => (
-  <div className="grid grid-flow-col grid-rows-4 gap-4 md:grid-rows-2">
-    {mockProjects.map((project) => (
-      <CardProject key={`project-${project.name}`} {...project} />
-    ))}
-  </div>
-);
+const Projects = () => {
+  const { t } = useTranslation();
+
+  const mockProjects: CardProjectProps[] = [
+    {
+      name: "He4rt Landing",
+      url: "https://github.com/he4rt/he4rt-landing-ssr",
+      description: t("projects.landing"),
+      techs: ["remix", "reactjs", "tailwindcss", "typescript"],
+    },
+    {
+      name: "He4rt Conf",
+      url: "https://github.com/he4rt/he4rtconf-landing",
+      description: t("projects.conf"),
+      techs: ["nextjs", "reactjs", "styled-components", "typescript"],
+    },
+    {
+      name: "He4rt Recap 2022",
+      url: "https://github.com/kjkGustavo/he4rt-recap-2022",
+      description: t("projects.recap"),
+      techs: [
+        "nextjs",
+        "reactjs",
+        "tailwindcss",
+        "typescript",
+        "framer-motion",
+      ],
+    },
+    {
+      name: "React 4noobs",
+      url: "https://github.com/he4rt/react4noobs",
+      description: t("projects.4noobs"),
+      techs: ["reactjs", "markdown"],
+    },
+  ];
+
+  return (
+    <div className="grid grid-flow-col grid-rows-4 gap-4 md:grid-rows-2">
+      {mockProjects.map((project) => (
+        <CardProject key={`project-${project.name}`} {...project} />
+      ))}
+    </div>
+  );
+};
 
 export default Projects;
