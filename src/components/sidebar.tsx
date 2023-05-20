@@ -4,7 +4,6 @@ import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import { useMedia } from "react-use";
 
 const textClassName =
   "dark:text-white text-black/70 text-2xl uppercase font-semibold leading-9 tracking-wider cursor-pointer";
