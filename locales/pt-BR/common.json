@@ -1,7 +1,8 @@
 {
   "navbar": {
     "about": "sobre",
-    "projects": "projetos"
+    "projects": "projetos",
+    "experience": "experiência"
   },
   "about": {
     "title": "Um pouco sobre mim...",
