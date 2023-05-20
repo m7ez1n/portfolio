@@ -1,14 +1,14 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-import Circle from "@/components/circle";
+import Content from "@/components/about";
 import Layout from "@/components/layout";
 
 import type { GetStaticProps } from "next";
 
-export default function Home() {
+export default function About() {
   return (
     <Layout>
-      <Circle />
+      <Content />
     </Layout>
   );
 }
