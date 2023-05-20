@@ -11,6 +11,7 @@ const Circle = () => (
       width={665}
       height={795}
       className="relative md:right-0 md:bottom-0 bottom-5 right-5"
+      priority
     />
   </div>
 );

@@ -11,6 +11,7 @@ type LinksProps = {
   icon: ReactNode;
   link: string;
   name: string;
+  ariaLabel: string;
 };
 
 const links: LinksProps[] = [
@@ -18,6 +19,7 @@ const links: LinksProps[] = [
     icon: <AiOutlineGithub className="text-[#FF2B51]" size={36} />,
     link: "https://github.com/m7he4rt",
     name: "Github",
+    ariaLabel: "Github m7he4rt",
   },
   {
     icon: (
@@ -25,11 +27,13 @@ const links: LinksProps[] = [
     ),
     link: "https://twitter.com/m7ez1n",
     name: "Twitter",
+    ariaLabel: "Twitter m7ez1n",
   },
   {
     icon: <AiFillLinkedin className="text-[#FF2B51]" size={36} />,
     link: "https://www.linkedin.com/in/m7aei",
     name: "Linkedin",
+    ariaLabel: "Linkedin Mateus Mendes",
   },
 ];
 
@@ -46,12 +50,13 @@ const SocialMedia = () => {
 
   return (
     <div className="flex gap-4">
-      {links.map(({ icon, link, name }) => (
+      {links.map(({ icon, link, name, ariaLabel }) => (
         <a
           key={`key-${name}`}
           href={link}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={ariaLabel}
         >
           {icon}
         </a>
