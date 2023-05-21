@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { AiOutlineGithub } from "react-icons/ai";
 
 import TechTag from "@/components/tech-tag";
+import { FiExternalLink } from "react-icons/fi";
 
 type CardProjectProps = {
   name: string;
@@ -22,11 +23,12 @@ const CardProject = ({
     <div className="flex items-center justify-between mb-3">
       <a
         href={url}
-        className="text-lg font-bold dark:text-white text-black/70 hover:text-[#FF2B51] hover:dark:text-[#FF2B51] transition duration-300"
+        className="text-lg font-bold dark:text-white text-black/70 hover:text-[#FF2B51] hover:dark:text-[#FF2B51] transition duration-300 flex items-center gap-2"
         target="_blank"
         rel="noopener noreferrer"
       >
         {name}
+        <FiExternalLink />
       </a>
 
       <a
