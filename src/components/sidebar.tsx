@@ -29,19 +29,17 @@ const ContentLinks = () => {
     {
       title: t("navbar.experience"),
       to: "/experience",
-      className:
-        "text-2xl font-semibold leading-9 tracking-wider uppercase pointer-events-none dark:text-gray-500 text-black/40 cursor-none",
     },
   ];
 
   return (
     <>
-      {links.map(({ title, to, className }) => (
+      {links.map(({ title, to }) => (
         <Link
           href={to}
           key={title}
           className={clsx(
-            !className ? textClassName : className,
+            textClassName,
             to === router.pathname ? activeContent : null
           )}
         >
