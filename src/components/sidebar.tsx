@@ -104,7 +104,7 @@ const Sidebar = () => {
 
   return (
     <div className="md:block md:rotate-90 md:absolute md:right-0 md:top-[50%] md:translate-x-[40%] md:w-[100vh] md:text-center md:z-10">
-      <div className="flex gap-8 md:items-center md:justify-center md:gap-12">
+      <div className="flex items-center justify-center gap-6">
         <ContentLinks />
       </div>
     </div>
