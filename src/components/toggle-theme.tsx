@@ -1,9 +1,15 @@
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 import { BsMoon, BsSun } from "react-icons/bs";
 
 const ToggleTheme = () => {
+  const [mounted, setMounted] = useState(false);
   const { theme, systemTheme, setTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
+
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) return null;
 
   if (currentTheme === "light") {
     return (
