@@ -13,5 +13,37 @@
     "conf": "Design for He4rtConf2021 event, authentication and tickets",
     "recap": "Project to show how 2022 was for He4rt Developers",
     "4noobs": "Project made for beginners to learn more about ReactJS"
+  },
+  "experience": {
+    "trainee": {
+      "timestamp": "October, 2019",
+      "title": "Trainee - LEB",
+      "description": "I started my journey into the world of programming when I was just 17 years old and I was completely in love with this universe of solving problems and creating solutions through codes."
+    },
+    "juniorKonoIT": {
+      "timestamp": "February, 2020",
+      "title": "Junior Frontend Developer - KonoIT",
+      "description": "At KonoIT, I developed a system for the healthcare area, using current best practices and technologies. My experience at KonoIT prepared me for new challenges in the market."
+    },
+    "juniorLeb": {
+      "timestamp": "April, 2021",
+      "title": "Junior Frontend Developer - LEB",
+      "description": "At LEB, I had the opportunity to work as a developer, taking on projects and having the autonomy to implement new features and innovative solutions. With solid technical skills and creativity, I worked as a team to develop solutions that met customer demands."
+    },
+    "rarolabs": {
+      "timestamp": "September, 2021",
+      "title": "Frontend Developer - RaroLabs",
+      "description": "I had the opportunity to develop my skills in software development, where I had the challenge of creating a new system for internal use in the company in order to improve the experience of operational teams."
+    },
+    "raroacademy": {
+      "timestamp": "January, 2022",
+      "title": "Teacher - Raro Academy",
+      "description": "As an instructor at Raro Academy, I had the opportunity to share my programming expertise in React and Global State Control, including Context, Zustand and Redux. In addition to correcting exercises, I had the responsibility of structuring the course for the students, using my experience and knowledge."
+    },
+    "seniorRarolabs": {
+      "timestamp": "July, 2022",
+      "title": "Senior Frontend Developer - RaroLabs",
+      "description": "I created new applications, applying good design standards and current market technologies. Demonstrating ability to deal with complex projects, I also worked on the refactoring of large systems, aiming to improve their quality and efficiency."
+    }
   }
 }
