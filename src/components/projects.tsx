@@ -1,9 +1,9 @@
-import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
+import { useTranslation } from "next-i18next";
 import { AiOutlineGithub } from "react-icons/ai";
 
 import TechTag from "@/components/tech-tag";
 import { FiExternalLink } from "react-icons/fi";
-import { useEffect, useState } from "react";
 
 type CardProjectProps = {
   name: string;
