@@ -4,6 +4,7 @@ import { ThemeProvider } from "next-themes";
 
 import type { AppProps } from "next/app";
 
+import TransitionEffect from "@/components/transition";
 import "@/styles/globals.css";
 
 function App({ Component, pageProps }: AppProps) {
@@ -24,7 +25,9 @@ function App({ Component, pageProps }: AppProps) {
           cardType: "/eu.png",
         }}
       />
-      <Component {...pageProps} />
+      <TransitionEffect>
+        <Component {...pageProps} />
+      </TransitionEffect>
     </ThemeProvider>
   );
 }
