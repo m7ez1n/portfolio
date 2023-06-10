@@ -1,6 +1,6 @@
+import Sidebar from "@/components/sidebar";
 import SocialMedia from "@/components/social-media";
 import ToggleTheme from "@/components/toggle-theme";
-import Sidebar from "@/components/sidebar";
 
 const Layout = ({ children }: { children: React.ReactNode }) => (
   <>
@@ -20,7 +20,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => (
         </div>
       </div>
       <div className="flex md:justify-center">{children}</div>
-      <div className="flex flex-col items-center justify-between w-full gap-8 md:gap-0 md:flex-row">
+      <div className="flex flex-col items-center justify-between w-full gap-8 mt-4 md:gap-0 md:flex-row md:mt-0">
         <div>
           <p className="text-2xl font-semibold leading-10 text-black/70 dark:text-white">
             Web Developer
