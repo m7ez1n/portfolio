@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
 import { useTranslation } from "next-i18next";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 type ExperienceProps = {
   timestamp: string;
@@ -50,10 +51,10 @@ const Experience = () => {
 
   return (
     <div className="sticky ml-0 md:ml-12 lg:w-2/3">
-      <div className="container w-full h-full smx-auto">
+      <div className="container w-full h-full mx-auto">
         <div className="relative h-full p-10 overflow-hidden wrap">
-          <div className="md:border-2-2 md:absolute md:h-full md:border-2 md:right-1/2 md:border-[#E40037] md:rounded-[1%]" />
-          <div className="md:border-2-2 md:absolute md:h-full md:border-2 md:left-1/2 md:border-[#E40037] md:rounded-[1%]" />
+          <div className="md:border-2-2 md:absolute md:h-4/5 md:border-2 md:right-1/2 md:border-[#E40037] md:rounded-[1%]" />
+          <div className="md:border-2-2 md:absolute md:h-4/5 md:border-2 md:left-1/2 md:border-[#E40037] md:rounded-[1%]" />
           {experiences
             .map((item) => (
               <div
@@ -75,6 +76,14 @@ const Experience = () => {
               </div>
             ))
             .reverse()}
+          <Image
+            src="/astronaut.svg"
+            alt="Astronaut with computer and rocket"
+            className="hidden mx-auto md:block md:mt-28"
+            priority
+            width={350}
+            height={350}
+          />
         </div>
       </div>
     </div>
