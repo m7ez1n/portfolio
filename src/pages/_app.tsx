@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { appWithTranslation } from "next-i18next";
 import { DefaultSeo } from "next-seo";
 import { ThemeProvider } from "next-themes";
@@ -27,6 +28,7 @@ function App({ Component, pageProps }: AppProps) {
       />
       <TransitionEffect>
         <Component {...pageProps} />
+        <Analytics />
       </TransitionEffect>
     </ThemeProvider>
   );
