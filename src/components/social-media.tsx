@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import {
+  AiFillLinkedin,
   AiOutlineGithub,
   AiOutlineTwitter,
-  AiFillLinkedin,
 } from "react-icons/ai";
 
 import type { ChangeEvent, ReactNode } from "react";
@@ -17,9 +17,9 @@ type LinksProps = {
 const links: LinksProps[] = [
   {
     icon: <AiOutlineGithub className="text-[#FF2B51]" size={36} />,
-    link: "https://github.com/m7he4rt",
+    link: "https://github.com/m7ez1n",
     name: "Github",
-    ariaLabel: "Github m7he4rt",
+    ariaLabel: "Github m7ez1n",
   },
   {
     icon: (
@@ -31,7 +31,7 @@ const links: LinksProps[] = [
   },
   {
     icon: <AiFillLinkedin className="text-[#FF2B51]" size={36} />,
-    link: "https://www.linkedin.com/in/m7aei",
+    link: "https://www.linkedin.com/in/m7ez1n",
     name: "Linkedin",
     ariaLabel: "Linkedin Mateus Mendes",
   },

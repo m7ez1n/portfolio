@@ -17,8 +17,8 @@ function App({ Component, pageProps }: AppProps) {
         openGraph={{
           type: "website",
           locale: "pt_BR",
-          url: "https://m7he4rt.vercel.app",
-          siteName: "m7he4rt",
+          url: "https://m7ez1n.vercel.app",
+          siteName: "m7ez1n",
         }}
         twitter={{
           handle: "@handle",
