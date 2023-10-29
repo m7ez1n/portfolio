@@ -1,14 +1,19 @@
-import Sidebar from "@/components/sidebar";
-import SocialMedia from "@/components/social-media";
-import ToggleTheme from "@/components/toggle-theme";
+import Sidebar, { SidebarDictionaryProps } from "./sidebar";
+import SocialMedia from "./social-media";
+import ToggleTheme from "./toggle-theme";
 
-const Layout = ({ children }: { children: React.ReactNode }) => (
+type LayoutProps = {
+  children: React.ReactNode;
+  sidebarDictionary: SidebarDictionaryProps;
+};
+
+const Layout = ({ children, sidebarDictionary }: LayoutProps) => (
   <>
     <main className="flex flex-col justify-between min-h-screen p-8 select-none min-w-screen dark:bg-black md:p-14">
       <div className="w-full md:flex md:items-center md:justify-between">
         <div className="flex items-center justify-between gap-4 mb-12">
           <ToggleTheme />
-          <Sidebar />
+          <Sidebar {...sidebarDictionary} />
         </div>
         <div className="flex flex-col gap-2 mb-8 md:mb-0">
           <h1 className="font-light text-4xl text-[#FF2B51] tracking-wider text-center md:text-right leading-10 uppercase">

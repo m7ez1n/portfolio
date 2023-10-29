@@ -1,33 +1,48 @@
-import Link from "next/link";
+"use client";
+
 import clsx from "clsx";
-import { useTranslation } from "next-i18next";
-import { useRouter } from "next/router";
+import { useCurrentLocale } from "next-i18n-router/client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+
+import i18nConfig from "@/i18nConfig";
+
+export type SidebarDictionaryProps = {
+  about: string;
+  projects: string;
+  experience: string;
+};
 
 const textClassName =
   "dark:text-white text-black/70 text-2xl uppercase font-semibold leading-9 tracking-wider cursor-pointer";
 const activeContent =
   "after:block after:w-full md:after:w-14 after:h-[1px] after:bg-[#FF2B51] after:relative after:mt-1.5";
 
-const ContentLinks = () => {
-  const router = useRouter();
-  const { t } = useTranslation();
+const ContentLinks = ({
+  about,
+  experience,
+  projects,
+}: SidebarDictionaryProps) => {
+  const pathname = usePathname();
+  const currentLocale = useCurrentLocale(i18nConfig);
+
   const links = [
     {
       title: "home",
       to: "/",
     },
     {
-      title: t("navbar.about"),
+      title: about,
       to: "/about",
     },
     {
-      title: t("navbar.projects"),
+      title: projects,
       to: "/projects",
     },
     {
-      title: t("navbar.experience"),
+      title: experience,
       to: "/experience",
     },
   ];
@@ -40,7 +55,7 @@ const ContentLinks = () => {
           key={title}
           className={clsx(
             textClassName,
-            to === router.pathname ? activeContent : null
+            `/${currentLocale}${to}` === pathname ? activeContent : null
           )}
         >
           {title}
@@ -50,7 +65,7 @@ const ContentLinks = () => {
   );
 };
 
-const MobileSidebar = () => {
+const MobileSidebar = ({ children }: { children: React.ReactNode }) => {
   const [open, setOpen] = useState(false);
   const toggleMenu = () => setOpen((prev) => !prev);
 
@@ -79,13 +94,13 @@ const MobileSidebar = () => {
       </div>
 
       <div className="flex flex-col items-center justify-center h-full gap-5">
-        <ContentLinks />
+        {children}
       </div>
     </div>
   );
 };
 
-const Sidebar = () => {
+const Sidebar = ({ ...dictionary }: SidebarDictionaryProps) => {
   const [screenWidth, setScreenWidth] = useState<number>(0);
   const isMobile = screenWidth < 768;
 
@@ -97,13 +112,17 @@ const Sidebar = () => {
   }, []);
 
   if (isMobile) {
-    return <MobileSidebar />;
+    return (
+      <MobileSidebar>
+        <ContentLinks {...dictionary} />
+      </MobileSidebar>
+    );
   }
 
   return (
     <div className="md:block md:rotate-90 md:absolute md:right-0 md:top-[50%] md:translate-x-[40%] md:w-[100vh] md:text-center md:z-10">
       <div className="flex items-center justify-center gap-6">
-        <ContentLinks />
+        <ContentLinks {...dictionary} />
       </div>
     </div>
   );
