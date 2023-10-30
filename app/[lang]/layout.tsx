@@ -1,6 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
-// import { ThemeProvider } from "next-themes";
 
 import { getDictionary } from "@/app/[lang]/dictionaries";
 import Layout from "@/components/layout";
