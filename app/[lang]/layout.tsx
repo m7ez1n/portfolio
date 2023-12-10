@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Metadata } from "next";
 
 import { getDictionary } from "@/app/[lang]/dictionaries";
@@ -44,6 +45,7 @@ export default async function RootLayout({
         <Providers>
           <Layout sidebarDictionary={dict.sidebar}>{children}</Layout>
           <Analytics />
+          <SpeedInsights />
         </Providers>
       </body>
     </html>
