@@ -67,11 +67,20 @@ const ContentLinks = ({
 
 const MobileSidebar = ({ children }: { children: React.ReactNode }) => {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
   const toggleMenu = () => setOpen((prev) => !prev);
 
   useEffect(() => {
     document.body.style.overflowY = open ? "hidden" : "auto";
   }, [open]);
+
+  useEffect(() => {
+    if (open) {
+      setOpen(false);
+    }
+
+    return setOpen(false);
+  }, [pathname]);
 
   if (!open) {
     return (
